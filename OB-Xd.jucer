@@ -15,6 +15,10 @@
               buildStandalone="1" enableIAA="0">
   <MAINGROUP id="NZ3n4V" name="Obxd">
     <GROUP id="{90740217-84AB-FD0D-FBC4-CA9EA2C68D5E}" name="Source">
+      <FILE id="PtpnHX" name="StandaloneFilterWindow.h" compile="0" resource="0"
+            file="Source/StandaloneFilterWindow.h"/>
+      <FILE id="dsYt1s" name="StandaloneFilterApp.cpp" compile="1" resource="0"
+            file="Source/StandaloneFilterApp.cpp"/>
       <GROUP id="{5F0B15D1-4D92-B2FF-5904-9CF4C3CE645F}" name="Images">
         <FILE id="nnY63W" name="appicon.png" compile="0" resource="1" file="Source/Images/appicon.png"/>
         <FILE id="IV8Ubu" name="button.png" compile="0" resource="1" file="Source/Images/button.png"/>
