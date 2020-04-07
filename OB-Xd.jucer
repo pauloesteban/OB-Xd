@@ -12,7 +12,7 @@
               companyWebsite="https://www.discodsp.com/obxd/" companyEmail=""
               buildAUv3="0" pluginIsMidiEffectPlugin="0" pluginFormats="buildAU,buildStandalone,buildVST,buildVST3"
               pluginCharacteristicsValue="pluginIsSynth,pluginWantsMidiIn"
-              buildStandalone="1" enableIAA="0">
+              buildStandalone="1" enableIAA="0" defines="JUCE_USE_CUSTOM_PLUGIN_STANDALONE_APP=1">
   <MAINGROUP id="NZ3n4V" name="Obxd">
     <GROUP id="{90740217-84AB-FD0D-FBC4-CA9EA2C68D5E}" name="Source">
       <FILE id="PtpnHX" name="StandaloneFilterWindow.h" compile="0" resource="0"
