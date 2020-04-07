@@ -11,6 +11,7 @@ It contains the basic startup code for a Juce application.
 #include "PluginEditor.h"
 #include <utility>
 // #include "GUI/BinaryData.h"
+#include "StandaloneFilterApp.cpp"
 
 
 //==============================================================================

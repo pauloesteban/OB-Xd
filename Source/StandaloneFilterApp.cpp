@@ -24,12 +24,12 @@
   ==============================================================================
 */
 
-#include <JuceHeader.h>
+#include "../JuceLibraryCode/JuceHeader.h"
 
 // You can set this flag in your build if you need to specify a different
 // standalone JUCEApplication class for your app to use. If you don't
 // set it then by default we'll just create a simple one as below.
-#if ! JUCE_USE_CUSTOM_PLUGIN_STANDALONE_APP
+//#if ! JUCE_USE_CUSTOM_PLUGIN_STANDALONE_APP
 
 extern juce::AudioProcessor* JUCE_CALLTYPE createPluginFilter();
 
@@ -159,5 +159,5 @@ Image JUCE_CALLTYPE juce_getIAAHostIcon (int size)
 }
 #endif
 #endif
-
-#endif
+START_JUCE_APPLICATION(StandaloneFilterApp)
+//#endif
