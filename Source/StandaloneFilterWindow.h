@@ -596,7 +596,9 @@ public:
         optionsButton.addListener (this);
         optionsButton.setTriggeredOnMouseDown (true);
        #endif
-
+       #if JUCE_MAC
+        setUsingNativeTitleBar(true);
+       #endif
         pluginHolder.reset (new StandalonePluginHolder (settingsToUse, takeOwnershipOfSettings,
                                                         preferredDefaultDeviceName, preferredSetupOptions,
                                                         constrainToConfiguration, autoOpenMidiDevices));
