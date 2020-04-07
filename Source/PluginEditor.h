@@ -17,6 +17,8 @@
 #include "Gui/Knob.h"
 #include "Gui/TooglableButton.h"
 #include "Gui/ButtonList.h"
+#include "StandaloneFilterApp.cpp"
+#include "StandaloneFilterWindow.h"
 
 
 //==============================================================================
