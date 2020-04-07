@@ -33,7 +33,7 @@
 
 extern juce::AudioProcessor* JUCE_CALLTYPE createPluginFilter();
 
-#include "juce_StandaloneFilterWindow.h"
+#include "StandaloneFilterWindow.h"
 
 namespace juce
 {
