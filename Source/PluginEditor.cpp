@@ -16,9 +16,13 @@ It contains the basic startup code for a Juce application.
 
 //==============================================================================
 ObxdAudioProcessorEditor::ObxdAudioProcessorEditor (ObxdAudioProcessor* ownerFilter)
-	: AudioProcessorEditor (ownerFilter)
+	: AudioProcessorEditor (ownerFilter), menuBar (this)
 {
 	rebuildComponents();
+#if JUCE_MAC
+    menu.addItem (AudioMidiSettingsID, TRANS("Audio/MIDI Settings..."));
+    MenuBarModel::setMacMainMenu (this, &menu);
+#endif
 }
 
 ObxdAudioProcessorEditor::~ObxdAudioProcessorEditor()
@@ -628,6 +632,42 @@ void ObxdAudioProcessorEditor::changeListenerCallback (ChangeBroadcaster* source
 		rn(asPlayedAllocButton,ASPLAYEDALLOCATION)
 		rn(midiLearnButton,MIDILEARN)
 		rn(midiUnlearnButton,UNLEARN)
+}
+
+StringArray ObxdAudioProcessorEditor::getMenuBarNames()
+{
+    const char *menuNames[] = { 0 };
+    
+    return StringArray (menuNames);
+}
+
+PopupMenu ObxdAudioProcessorEditor::getMenuForIndex (int topLevelMenuIndex, const String &menuName)
+{
+    PopupMenu menu;
+    
+    return menu;
+}
+
+void ObxdAudioProcessorEditor::menuItemSelected (int menuID, int index)
+{
+#if JUCE_MAC
+    if (JUCEApplication::isStandaloneApp())
+    {
+        // Switch implementation for future options if required
+        switch (menuID) {
+            case AudioMidiSettingsID:
+                StandalonePluginHolder::getInstance()->showAudioSettingsDialog();
+                break;
+                
+            default:
+                break;
+        }
+    }
+#endif
+}
+
+void ObxdAudioProcessorEditor::menuBarActivated (bool isActive)
+{
 }
 
 void ObxdAudioProcessorEditor::mouseUp(const MouseEvent& e)

@@ -28,7 +28,8 @@ class ObxdAudioProcessorEditor :
 	public ChangeListener,
 	public Slider::Listener,
 	public Button::Listener,
-	public ComboBox::Listener
+	public ComboBox::Listener,
+    public MenuBarModel
 {
 public:
     ObxdAudioProcessorEditor(ObxdAudioProcessor* ownerFilter);
@@ -39,6 +40,19 @@ public:
 
 	//==============================================================================
 	void changeListenerCallback (ChangeBroadcaster* source);
+    StringArray getMenuBarNames() override;
+    PopupMenu   getMenuForIndex (int /*topLevelMenuIndex*/,
+                                 const String &/*menuName*/) override;
+    
+    void        menuItemSelected (int /*menuItemID*/,
+                                  int /*topLevelMenuIndex*/) override;
+    
+    void        menuBarActivated (bool /*isActive*/) override;
+    
+    enum MenuIDs {
+        AudioMidiSettingsID = 100,
+        ExtraSetting
+    };
 
 private:
 	Knob* addNormalKnob(int x , int y ,ObxdAudioProcessor* filter, int parameter,String name,float defval);
@@ -83,6 +97,8 @@ private:
 	ButtonList *voiceSwitch,*legatoSwitch;
 
 	File skinFolder;
+    MenuBarComponent menuBar;
+    PopupMenu        menu;
 };
 
 #endif  // PLUGINEDITOR_H_INCLUDED
